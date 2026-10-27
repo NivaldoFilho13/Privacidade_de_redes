@@ -1,1 +1,405 @@
+:root {
+    --noite: #1d1b3a;
+    --noite2: #2b2859;
+    --menta: #5eead4;
+    --creme: #fff7e0;
+    --rosa: #ff6fa5;
+    --sol: #ffd23f;
+    --pixel: 'Press Start 2P', 'Courier New', monospace;
+    --corpo: 'Nunito', system-ui, sans-serif;
+}
 
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: var(--corpo);
+    color: var(--creme);
+    background: var(--noite);
+    background-image: linear-gradient(var(--noite2) 1px, transparent 1px), linear-gradient(90deg, var(--noite2) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 18px 60px
+}
+
+.estreito {
+    max-width: 560px
+}
+
+header {
+    text-align: center;
+    padding: 24px 0 8px
+}
+
+h1 {
+    font-family: var(--pixel);
+    font-size: clamp(1.2rem, 4.5vw, 2.2rem);
+    line-height: 1.5;
+    margin: 0;
+    color: var(--sol);
+    text-shadow: 4px 4px 0 var(--rosa)
+}
+
+header p {
+    margin: 14px 0 0;
+    font-weight: 700
+}
+
+h2 {
+    font-family: var(--pixel);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 18px
+}
+
+/* Caixa de formulário */
+.caixa {
+    background: var(--creme);
+    color: var(--noite);
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 var(--rosa);
+    padding: 24px;
+    margin: 26px auto 0
+}
+
+label {
+    display: block;
+    font-weight: 800;
+    margin: 14px 0 6px
+}
+
+input,
+select {
+    width: 100%;
+    font: inherit;
+    font-weight: 700;
+    padding: 12px;
+    border: 3px solid var(--noite);
+    background: #fff;
+    color: var(--noite);
+    border-radius: 0
+}
+
+input:focus,
+select:focus,
+summary:focus-visible {
+    outline: 4px solid var(--menta);
+    outline-offset: 0
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+button,
+.btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 22px;
+    width: 100%;
+    font-family: var(--pixel);
+    font-size: .75rem;
+    padding: 16px;
+    border: 3px solid #000;
+    background: var(--sol);
+    color: #000;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000
+}
+
+button:active,
+.btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #000
+}
+
+.aviso {
+    padding: 12px;
+    border: 3px solid #000;
+    font-weight: 800;
+    margin-bottom: 8px
+}
+
+.aviso.ok {
+    background: #b9f6ca
+}
+
+.aviso.erro {
+    background: #ffcdd2
+}
+
+.troca {
+    text-align: center;
+    margin: 18px 0 0;
+    font-weight: 700
+}
+
+.troca a {
+    color: var(--noite)
+}
+
+/* Termos */
+details.termos {
+    border: 3px solid var(--noite);
+    background: #fff;
+    margin-top: 18px;
+    padding: 0
+}
+
+details.termos summary {
+    cursor: pointer;
+    font-weight: 800;
+    padding: 12px
+}
+
+.termos-texto {
+    padding: 0 14px 14px;
+    max-height: 260px;
+    overflow: auto;
+    font-size: .95rem;
+    line-height: 1.55
+}
+
+.termos-texto h3 {
+    font-size: .95rem;
+    margin: 14px 0 4px
+}
+
+.termos-texto p,
+.termos-texto ul {
+    margin: 4px 0
+}
+
+.aceite {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 16px;
+    font-weight: 800
+}
+
+.aceite input {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    flex: none
+}
+
+.aceite label {
+    margin: 0
+}
+
+/* Página interna */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border: 4px solid #000;
+    background: var(--noite2);
+    padding: 12px 16px;
+    box-shadow: 6px 6px 0 #000
+}
+
+.topo strong {
+    color: var(--sol)
+}
+
+.sair {
+    color: var(--creme);
+    font-weight: 800
+}
+
+.jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 22px;
+    margin: 30px 0
+}
+
+.quadro {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 #000;
+    position: relative;
+    overflow: hidden;
+    min-height: 270px;
+    transition: transform .12s, box-shadow .12s
+}
+
+.quadro:hover,
+.quadro:focus-visible {
+    transform: translate(-3px, -3px);
+    box-shadow: 11px 11px 0 #000
+}
+
+.quadro:focus-visible {
+    outline: 4px solid var(--menta)
+}
+
+.quadro .conteudo {
+    position: relative;
+    padding: 20px
+}
+
+.quadro h3 {
+    font-family: var(--pixel);
+    font-size: .95rem;
+    line-height: 1.6;
+    margin: 0 0 10px
+}
+
+.quadro p {
+    margin: 0 0 16px;
+    font-weight: 700
+}
+
+.botao {
+    display: inline-block;
+    font-family: var(--pixel);
+    font-size: .65rem;
+    padding: 12px 14px;
+    border: 3px solid #000;
+    background: var(--creme);
+    color: #000
+}
+
+/* Dragon Ball */
+.dbz {
+    background: radial-gradient(circle at 80% 15%, #ffe98a 0, #ffb52e 35%, #f57c00 70%, #c2410c 100%);
+    color: #1b1000
+}
+
+.dbz h3 {
+    color: #1a2a8a;
+    text-shadow: 2px 2px 0 #ffe98a
+}
+
+.esferas {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+    flex-wrap: wrap
+}
+
+.esfera {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #7a2e00;
+    display: grid;
+    place-items: center;
+    font-size: .7rem;
+    color: #b00020;
+    line-height: 1;
+    background: radial-gradient(circle at 32% 28%, #fff4b0 0, #ffb300 45%, #e65100 100%)
+}
+
+.dbz .botao {
+    background: #1a2a8a;
+    color: #fff
+}
+
+.aura {
+    position: absolute;
+    right: -30px;
+    bottom: -40px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, .55), transparent 65%)
+}
+
+/* Minecraft */
+.mine {
+    background: #79c1ff;
+    color: #fff
+}
+
+.mine .conteudo {
+    padding-top: 62px
+}
+
+.grama {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 46px;
+    background: repeating-linear-gradient(90deg, #4caf2e 0 16px, #3f9a25 16px 32px, #56b934 32px 48px);
+    border-bottom: 8px solid #6b4423
+}
+
+.terra {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 54px;
+    bottom: 0;
+    background: repeating-linear-gradient(90deg, #7a4f2b 0 24px, #6b4423 24px 48px, #835733 48px 64px), #6b4423
+}
+
+.mine h3 {
+    text-shadow: 3px 3px 0 #000
+}
+
+.mine p {
+    text-shadow: 2px 2px 0 #000
+}
+
+.creeper {
+    position: absolute;
+    right: 16px;
+    top: 70px;
+    width: 56px;
+    height: 56px;
+    background-color: #4caf2e;
+    border: 3px solid #000;
+    background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
+    background-repeat: no-repeat;
+    background-size: 10px 10px, 10px 10px, 10px 18px, 26px 8px;
+    background-position: 8px 10px, 30px 10px, 23px 28px, 15px 36px
+}
+
+.mine .botao {
+    background: #8b8b8b
+}
+
+.nota {
+    text-align: center;
+    font-weight: 700;
+    opacity: .85;
+    max-width: 620px;
+    margin: 0 auto
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 700;
+    opacity: .8
+}
+
+@media (max-width:480px) {
+    .linha {
+        grid-template-columns: 1fr
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .quadro {
+        transition: none
+    }
+}
